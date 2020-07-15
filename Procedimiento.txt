@@ -21,3 +21,12 @@ Procedimiento para respaldar el sitio web en Wordpress con SSL
 
 	listo ya deberiamos poder acceder a un sitio restaurado correctamente (links funcionando y todo) con ssl desabilitado o sin ningun detalle para trabajar en local
 
+
+
+
+Adicional consulta ...
+
+use name_database;
+
+SELECT * FROM wp_options WHERE option_name='siteurl' OR option_name='home';
+
