@@ -1,0 +1,23 @@
+Procedimiento para respaldar el sitio web en Wordpress con SSL
+
+1 Restaurar la base de datos en local con ayuda por ej. de XAMPP
+
+2 Ingresar a la base de datos en la tabla wp_options y modificar los registros de la columna option_name
+	option name ----> siteurl  ---> ID 1
+	option name ----> home     ---> ID 37  
+	//LOS IDS SON RELATIVOS A COMO LOS ALMACENE LA DB
+
+3 Restaurar los archivos en directorio de xampp
+
+4 Modificar el archivo wp_config	
+	define('WP_HOME', 'http://localhost/weblocal'); APLICAR CAMBIO POR NUEVA URL LOCAL, AQUI YA HICE EL CAMBIO
+	define('WP_SITEURL', 'http://localhost/weblocal');  APLICAR CAMBIO POR NUEVA URL LOCAL , AQUI YA HICE EL CAMBIO
+	Y
+	configurar parametros de la base de datos que se restauro ( DB_NAME, DB_USER, DB_PASSWORD, DB_HOST )
+
+5 Entrar a administrador del sitio localhost/tusitio/wp-admin      ---> con mismma contraseña del sitio
+	vamos a la opcion ---> configuracion
+	despues en ----------> enlaces permanentes (link permanets) / hacer cambio de pj nombre entrada a numerico y regresar al original
+
+	listo ya deberiamos poder acceder a un sitio restaurado correctamente (links funcionando y todo) con ssl desabilitado o sin ningun detalle para trabajar en local
+
